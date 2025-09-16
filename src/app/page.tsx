@@ -42,7 +42,7 @@ export default function Home() {
           imageAlt="3D Character Models"
           buttonText="View Portfolio"
           buttonHref="/characters"
-          height="h-[600px]"
+          height="h-[300px] md:h-[600px]"
           overlayOpacity="bg-black/50"
         />
         <TraditionalArt
@@ -75,7 +75,7 @@ export default function Home() {
           caption={`Check out Olamide's Store for limited edition items`}
           link="https://olamidefamojuro.gumroad.com/"
           ctaName="View Store"
-          title=""
+          title="Online Store"
         />
         <About />
       </main>
