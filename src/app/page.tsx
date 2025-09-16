@@ -12,7 +12,7 @@ export default function Home() {
     "https://cdn.sanity.io/files/m0k79prg/production/2303d63c2e089d2ae33d050473b1d31acd3fd323.mp4";
   const mainImageUrl = `https://cdn.sanity.io/images/m0k79prg/production/9074149689037e294d64038605f09b5397bc3e89-1920x1920.jpg`;
   return (
-    <div className="w-full">
+    <div className="w-full mt-[70px] md:mt-0">
       <main className="min-h-screen">
         <VideoSection
           title="Films"

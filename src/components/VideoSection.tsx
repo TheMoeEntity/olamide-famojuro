@@ -41,11 +41,12 @@ export function VideoSection({
   const isMobile = useClientMediaQuery("(max-width: 768px)");
 
   // Apply aspect ratio only on mobile, or when no height is specified
-  const containerStyle = isMobile || !height ? { aspectRatio: "16/9" } : {};
+  const containerStyle = isMobile ? { aspectRatio: "16/9" } : {};
 
-  const containerClasses = height
-    ? `relative w-full ${height} overflow-hidden bg-black`
-    : "relative w-full overflow-hidden bg-black";
+  const containerClasses =
+    height && !isMobile
+      ? `relative w-full ${height} overflow-hidden bg-black`
+      : "relative w-full overflow-hidden bg-black";
 
   return (
     <section className={containerClasses} style={containerStyle}>
