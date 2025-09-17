@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { League_Spartan } from "next/font/google";
 import AppLayout from "@/components/AppLayout";
+import { Links } from "@/lib/constants";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -40,7 +41,7 @@ export const metadata: Metadata = {
   authors: [
     {
       name: "Olamide Henry Famojuro",
-      url: "https://olamidefamojuro.com",
+      url: Links.BASEURL,
     },
   ],
   icons: {
@@ -55,7 +56,7 @@ export const metadata: Metadata = {
     title: "Henry Fame | Character Artist Portfolio",
     description:
       "Explore the portfolio of Olamide Henry Famojuro — Henry Fame — a passionate character artist skilled in modeling, sculpting, and texturing for games, films, and 3D prints.",
-    url: "https://olamidefamojuro.com",
+    url: Links.BASEURL,
     type: "website",
     siteName: "Henry Fame Portfolio",
     locale: "en_US",
@@ -75,7 +76,7 @@ export const metadata: Metadata = {
       "Explore captivating 3D characters crafted by Henry Fame, blending realism and creativity for games and film.",
     images: ["https://olamidefamojuro.com/images/olamide-famojuro-hen.jpg"],
   },
-  metadataBase: new URL("https://olamidefamojuro.com"),
+  metadataBase: new URL(Links.BASEURL),
 };
 
 export default function RootLayout({

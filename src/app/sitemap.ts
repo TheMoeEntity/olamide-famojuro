@@ -1,7 +1,8 @@
+import { baseUrl } from "@/lib/constants";
 import { MetadataRoute } from "next";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const baseUrl = `https://olamidefamojuro.com`;
+  // const baseUrl = `https://olamidefamojuro.com`;
 
   // Define static pages with their last modified dates
   const staticPages = [

@@ -13,6 +13,7 @@ import artstation from "../../../public/logo_artstation.png";
 import linkedIn from "../../../public/logo_linkedin-line.png";
 import mail from "../../../public/mail_icon.png";
 import youTube from "../../../public/logo_youtube-line.png";
+import { Links } from "@/lib/constants";
 
 type MenuItem = {
   title: string;
@@ -41,25 +42,25 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
     { title: "Home", path: "/", external: false, icon: fameLogo },
     {
       title: "Store",
-      path: "https://olamidefamojuro.gumroad.com/",
+      path: Links.GUMROAD,
       external: true,
       icon: store,
     },
     {
       title: "Instagram",
-      path: "https://www.instagram.com/olamide_famojuro",
+      path: Links.INSTAGRAM,
       external: true,
       icon: insta,
     },
     {
       title: "Art Station",
-      path: "https://olamidefamojuro.artstation.com/",
+      path: Links.ARTSTATION,
       external: true,
       icon: artstation,
     },
     {
       title: "LinkedIn",
-      path: "https://www.linkedin.com/in/olamide-famojuro-3b47a7185",
+      path: Links.LINKEDIN,
       external: true,
       icon: linkedIn,
     },
@@ -71,7 +72,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
     },
     {
       title: "YouTube Channel",
-      path: "https://youtube.com/@olamidefamojuro?si=kfWfvM6HrL26qySl",
+      path: Links.YOUTUBE,
       external: true,
       icon: youTube,
     },

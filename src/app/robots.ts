@@ -1,7 +1,8 @@
+import { Links } from "@/lib/constants";
 import { MetadataRoute } from "next";
 
 export default function robots(): MetadataRoute.Robots {
-  const baseUrl = `https://olamidefamojuro.com`;
+  const baseUrl = Links.BASEURL;
 
   return {
     rules: {
