@@ -40,15 +40,15 @@ export function ImageSection({
       {/* Content */}
       <div className="relative z-10 flex items-end md:items-center pb-8 justify-center h-full">
         <div className="text-center text-white px-6 max-w-2xl">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-1 text-balance">
+          <h2 className="text-4xl opacity-60 md:text-5xl font-semibold mb-1 text-balance">
             {title}
           </h2>
           {description && (
-            <p className="text-sm max-w-xs mx-auto md:text-xl mb-2 text-pretty opacity-90">
+            <p className="text-sm leading-4 md:leading-normal max-w-xs opacity-60 mx-auto md:text-xl mb-2 text-pretty">
               {description}
             </p>
           )}
-          <button className="bg-transparent md:text-base text-xs text-white rounded-full border-2 font-semibold px-4 py-2 md:px-8 md:py-3">
+          <button className="bg-transparent md:text-base text-xs text-white rounded-full border-1 opacity-60 font-semibold px-3 py-[5px] md:px-8 md:py-3">
             <a href={buttonHref}>{buttonText}</a>
           </button>
         </div>

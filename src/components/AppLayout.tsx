@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
+import { baseUrl } from "@/lib/constants";
 // import Loader from "../shared/Loader";
 // import ScrollToTop from "../shared/ScrollToTop";
 // import { fetchResume } from "@/lib/queries";
@@ -10,11 +11,12 @@ type Props = {
 };
 
 const AppLayout = async (props: Props) => {
+  const resumeUrl = baseUrl + "/Famojuro Olamide Henryi_3D-Aritst_CV.pdf";
   //   const resumeUrl = await fetchResume();
   return (
     <>
       {/* <Loader /> */}
-      <Header resumeUrl={null} />
+      <Header resumeUrl={resumeUrl} />
       {props.children}
       {/* <ScrollToTop /> */}
       <Footer />

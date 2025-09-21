@@ -1,5 +1,4 @@
 "use client";
-
 import Link from "next/link";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -34,8 +33,11 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
 
   // Centralized menu configuration
   const sidebarItems: MenuItem[] = [
-    { title: "About", path: "/about" },
-    { title: "Contact", path: "/contact" },
+    { title: "About", path: "#about" },
+    { title: "Profile", path: Links.LINKEDIN },
+    { title: "Shop", path: Links.GUMROAD },
+    { title: "Learning Center", path: Links.YOUTUBE },
+    { title: "Contact Me", path: "mailto:olamidefamojuro@gmail.com" },
   ];
 
   const menuItems_two: SideMenuItem[] = [
@@ -83,6 +85,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
   };
 
   const toggleModal = () => {
+    console.log(isModalOpen);
     setIsModalOpen(!isModalOpen);
   };
 
@@ -125,6 +128,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
         </div>
 
         <button
+          title="Side bar menu button"
           className="text-white md:hidden cursor-pointer z-[51]"
           type="button"
           onClick={toggleSidebar}
@@ -190,7 +194,12 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
         )}
       </div>
 
-      <button className="font-medium cursor-pointer fixed right-5 md:right-10 hidden md:block top-5 rounded-full  border border-1 px-5 py-2">
+      <button
+        type="button"
+        onClick={() => toggleModal()}
+        title="View Olamide's Resume"
+        className="font-medium z-[999999] cursor-pointer fixed right-5 md:right-10 hidden md:block top-5 rounded-full  border border-1 px-5 py-2"
+      >
         View Resume
       </button>
 
@@ -220,6 +229,8 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
             >
               <div className="h-full flex flex-col p-6">
                 <button
+                  type="button"
+                  title="Close side bar menu"
                   className="self-end mb-8"
                   onClick={toggleSidebar}
                   aria-label="Close menu"
@@ -251,7 +262,11 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
                       >
                         <Link
                           href={item.path}
-                          className={`text-2xl block py-3 ${isActive(item.path) ? "text-[#14AFF1]" : "text-white hover:text-[#14AFF1]"}`}
+                          className={`text-2xl block py-3 ${
+                            isActive(item.path)
+                              ? "text-[#14AFF1]"
+                              : "text-white hover:text-[#14AFF1]"
+                          }`}
                           onClick={toggleSidebar}
                         >
                           {item.title}
@@ -265,6 +280,8 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
                         transition={{ delay: 0.1 * sidebarItems.length }}
                       >
                         <button
+                          type="button"
+                          title="Close Resume"
                           className="text-2xl block py-3 text-white hover:text-[#14AFF1] w-full text-left"
                           onClick={() => {
                             toggleSidebar();
@@ -318,7 +335,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
         <AnimatePresence>
           {isModalOpen && (
             <motion.div
-              className="fixed inset-0 left-0 bg-black bg-opacity-70 z-[999999] flex flex-col justify-center items-end"
+              className="fixed inset-0 left-0 bg-black bg-opacity-70 z-[999999] flex flex-col justify-center items-center"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
@@ -333,6 +350,8 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
                 <div className="flex px-5 justify-between items-center mb-4">
                   <h2 className="text-2xl font-semibold">3D-Artist CV</h2>
                   <button
+                    type="button"
+                    title="Toggle Resume"
                     className="text-white hover:text-[#14AFF1]"
                     onClick={toggleModal}
                   >
