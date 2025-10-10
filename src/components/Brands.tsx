@@ -19,7 +19,7 @@ const brands = [
 export const Brands = () => {
   return (
     <div className="w-full mt-10 flex flex-col justify-center">
-      <h3 className="text-center px-3">
+      <h3 className="text-center px-3 text-xs">
         Some of the companies I was fortunate to work with
       </h3>
       <div className="flex flex-wrap mt-7 md:flex-nowrap justify-center gap-8 max-w-7xl mx-auto">

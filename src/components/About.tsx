@@ -9,10 +9,10 @@ const About = async () => {
   return (
     <section
       id="about"
-      className="bg-black w-full flex flex-col items-center justify-center gap-2 text-white pt-7 pb-28"
+      className="bg-black w-full flex flex-col items-center justify-center gap-0 text-white pt-7 pb-28"
     >
       {aboutUrl && (
-        <div className="w-[134px] md:w-[125px] flex justify-center items-center h-[134px] md:h-[125px] rounded-full overflow-hidden mb-6">
+        <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-4">
           <Image
             src={aboutUrl}
             alt="Olamide Famojuro Profile Picture"
@@ -23,11 +23,13 @@ const About = async () => {
         </div>
       )}
 
-      <h2 className="text-2xl text-center mt-0 font-medium mb-0">
+      <h2 className="md:text-2xl text-center text-lg mt-0 mb-0">
         Olamide Famojuro
       </h2>
-      <h2 className="text-xl mb-0">3D Character Artist/Tutor</h2>
-      <p className="max-w-4xl mx-auto mt-3 px-6 md:text-center leading-[23px]">
+      <h2 className="md:text-xl mt-0 mb-0 text-xs font-light">
+        3D Character Artist/Tutor
+      </h2>
+      <p className="max-w-4xl text-xs md:text-base  mx-auto mt-3 px-6 text-center leading-4 opacity-90 md:leading-[23px]">
         Famojuro Olamide is a multidisciplinary 3D artist with a strong
         foundation in both traditional and digital art. With a passion for
         storytelling and visual design, he has contributed to a variety of

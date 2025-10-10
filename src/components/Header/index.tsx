@@ -252,7 +252,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
                 </button>
 
                 <motion.nav className="flex-1">
-                  <ul className="space-y-6">
+                  <ul className="space-y-0">
                     {sidebarItems.map((item, index) => (
                       <motion.li
                         key={item.path}
