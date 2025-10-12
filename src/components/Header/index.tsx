@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { CloudDownload } from "lucide-react";
 import { usePathname } from "next/navigation";
 import Image, { StaticImageData } from "next/image";
-import fameLogo from "../../../public/FAME-LOGO.png";
+import fameLogo from "../../../public/olamide_logo_white.png";
 import store from "../../../public/shopping-bag.png";
 import insta from "../../../public/instagram_logo.png";
 import artstation from "../../../public/logo_artstation.png";

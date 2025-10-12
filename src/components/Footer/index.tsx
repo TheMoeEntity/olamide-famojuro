@@ -1,5 +1,5 @@
 import Image from "next/image";
-import logo from "../../../public/FAME-LOGO.png";
+import logo from "../../../public/olamide_logo_white.png";
 
 export const Footer = () => {
   return (
