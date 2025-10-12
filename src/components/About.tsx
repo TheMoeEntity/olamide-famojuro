@@ -7,12 +7,9 @@ const About = async () => {
   const aboutUrl = `https://cdn.sanity.io/images/m0k79prg/production/d62af99be61ead800a3cc614aa513ba12371e966-1869x2792.jpg`;
 
   return (
-    <section
-      id="about"
-      className="bg-black w-full flex flex-col items-center justify-center gap-0 text-white pt-7 pb-28"
-    >
+    <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-7 pb-28">
       {aboutUrl && (
-        <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-4">
+        <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-1">
           <Image
             src={aboutUrl}
             alt="Olamide Famojuro Profile Picture"
@@ -26,10 +23,10 @@ const About = async () => {
       <h2 className="md:text-2xl text-center text-lg mt-0 mb-0">
         Olamide Famojuro
       </h2>
-      <h2 className="md:text-xl mt-0 mb-0 text-xs font-light">
+      <h2 className="md:text-xl -mt-1 mb-0 text-xs font-light">
         3D Character Artist/Tutor
       </h2>
-      <p className="max-w-4xl text-xs md:text-base  mx-auto mt-3 px-6 text-center leading-4 opacity-90 md:leading-[23px]">
+      <p className="max-w-4xl text-xs md:text-base  mx-auto mt-2 px-6 text-center leading-4 opacity-90 md:leading-[23px]">
         Famojuro Olamide is a multidisciplinary 3D artist with a strong
         foundation in both traditional and digital art. With a passion for
         storytelling and visual design, he has contributed to a variety of

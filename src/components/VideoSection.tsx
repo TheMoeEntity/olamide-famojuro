@@ -90,7 +90,7 @@ export function VideoSection({
                 {description}
               </p>
             )}
-            <button className="bg-transparent md:text-base text-xs text-white rounded-full border-1 opacity-60 font-semibold px-3 py-[5px] md:px-8 md:py-3">
+            <button className="bg-transparent md:text-base text-xs text-white rounded-full border-1 opacity-60 font-semibold px-3 py-[2.5px] md:px-8 md:py-3">
               <a href={buttonHref}>{buttonText}</a>
             </button>
           </div>
