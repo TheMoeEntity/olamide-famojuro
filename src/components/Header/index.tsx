@@ -116,13 +116,15 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
     <header className="text-white body-font top-0 fixed w-full z-[999] bg-[#121212] md:bg-transparent">
       {/* Mobile Header */}
       <div className="flex justify-between md:hidden md:justify-end w-full gap-5 items-center px-5 py-4">
-        <span className="font-medium flex-1 md:hidden">Olamide Famojuro</span>
-        <div className="flex items-center flex-1 md:hidden">
+        <span className="font-medium opacity-70 text-sm flex-1 md:hidden">
+          Olamide Famojuro
+        </span>
+        <div className="flex  opacity-70 items-center flex-1 md:hidden">
           <Link href="/" className="flex items-center">
             <Image
               src={fameLogo}
               alt="Olamide Famojuro Logo"
-              className="w-10 h-10"
+              className="w-8 h-8"
             />
           </Link>
         </div>
@@ -136,6 +138,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
         >
           <motion.div
             animate={isSidebarOpen ? "open" : "closed"}
+            className="opacity-70"
             variants={{
               open: { rotate: 90 },
               closed: { rotate: 0 },
@@ -144,8 +147,8 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="32"
-              height="32"
+              width="20"
+              height="20"
               viewBox="0 0 24 24"
               fill="none"
               stroke="white"
@@ -221,7 +224,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
 
             {/* Sidebar Content */}
             <motion.div
-              className="absolute right-0 top-0 h-full w-4/5 md:w-[300px] max-w-sm bg-[#121212] shadow-lg"
+              className="absolute right-0 top-0 h-full w-[60%] md:w-[300px] max-w-sm bg-[#121212] shadow-lg"
               initial={{ x: "100%" }}
               animate={{ x: 0 }}
               exit={{ x: "100%" }}
@@ -252,7 +255,7 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
                 </button>
 
                 <motion.nav className="flex-1">
-                  <ul className="space-y-0">
+                  <ul className="space-y-1">
                     {sidebarItems.map((item, index) => (
                       <motion.li
                         key={item.path}
