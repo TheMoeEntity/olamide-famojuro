@@ -38,13 +38,13 @@ export function ImageSection({
       <div className={`absolute inset-0 ${overlayOpacity}`} />
 
       {/* Content */}
-      <div className="relative z-10 flex items-end md:items-center pb-8 justify-center h-full">
+      <div className="relative w-full z-10 flex items-end md:items-center pb-8 justify-center h-full">
         <div className="text-center text-white px-6 max-w-2xl">
           <h2 className="text-4xl opacity-60 md:text-5xl font-semibold mb-1 text-balance">
             {title}
           </h2>
           {description && (
-            <p className="text-sm leading-4 md:leading-normal max-w-xs opacity-60 mx-auto md:text-xl mb-2 text-pretty">
+            <p className="text-sm leading-4 md:leading-normal max-w-xs md:max-w-3xl opacity-60 mx-auto md:text-xl mb-2 text-pretty">
               {description}
             </p>
           )}

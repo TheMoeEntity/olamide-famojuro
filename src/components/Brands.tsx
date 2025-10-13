@@ -40,7 +40,7 @@ export const Brands = () => {
   ];
   return (
     <div className="w-full mt-10 flex flex-col justify-center">
-      <h3 className="text-center px-3 text-xs">
+      <h3 className="text-center px-3 md:text-2xl">
         Some of the companies I was fortunate to work with
       </h3>
       <div className="grid overflow-x-hidden gap-y-6 p-4 grid-cols-4 place-items-center justify-center items-center">
