@@ -5,6 +5,7 @@ import mediaOne from "../../public/traditional_art.png";
 import mediaTwo from "../../public/traditional_art_2.png";
 import mediaThree from "../../public/traditional_art_3.png";
 import About from "@/components/About";
+import { Links } from "@/lib/constants";
 
 export default function Home() {
   const youtubeUrl = `https://youtu.be/m2HrN-VhIHY`;
@@ -41,7 +42,7 @@ export default function Home() {
           imageUrl={mainImageUrl}
           imageAlt="3D Character Models"
           buttonText="View Portfolio"
-          buttonHref="/characters"
+          buttonHref={Links.ARTSTATION}
           height="h-[300px] md:h-[600px]"
           overlayOpacity="bg-black/50"
         />
