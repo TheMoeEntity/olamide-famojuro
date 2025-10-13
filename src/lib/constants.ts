@@ -6,4 +6,5 @@ export enum Links {
   LINKEDIN = "https://www.linkedin.com/in/olamide-famojuro-3b47a7185",
   INSTAGRAM = "https://www.instagram.com/olamide_famojuro",
   YOUTUBE = "https://youtube.com/@olamidefamojuro?si=kfWfvM6HrL26qySl",
+  ARTSTATION_FILMS = Links.ARTSTATION + "albums/9721595",
 }

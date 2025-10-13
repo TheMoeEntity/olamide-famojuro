@@ -31,7 +31,7 @@ export default function Home() {
           description="Some animated films Olamide has worked on over the years"
           videoUrl={filmUrl}
           buttonText="View Full Gallery"
-          buttonHref="/films"
+          buttonHref={Links.ARTSTATION_FILMS}
           height="h-[650px]"
           showContent
           showOverlay
