@@ -1,4 +1,4 @@
-export const baseUrl = `https://olamide-famojuro.vercel.app`;
+export const baseUrl = `https://olamidefamojuro.com`;
 export enum Links {
   BASEURL = baseUrl,
   GUMROAD = "https://olamidefamojuro.gumroad.com/",
