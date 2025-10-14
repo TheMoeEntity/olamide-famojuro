@@ -29,7 +29,7 @@ const Loader = () => {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.5, delay: 0.25 }}
           >
-            {"Henry Fame".split("").map((char, index) => (
+            {"Olamide Famojuro".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
