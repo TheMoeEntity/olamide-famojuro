@@ -7,7 +7,7 @@ const About = async () => {
   const aboutUrl = `https://cdn.sanity.io/images/m0k79prg/production/d62af99be61ead800a3cc614aa513ba12371e966-1869x2792.jpg`;
 
   return (
-    <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-7 md:pt-16 pb-28">
+    <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-16 pb-28">
       {aboutUrl && (
         <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-1">
           <Image
