@@ -116,9 +116,9 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
     <header className="text-white body-font top-0 fixed w-full z-[999] bg-[#121212] md:bg-transparent">
       {/* Mobile Header */}
       <div className="flex justify-between md:hidden md:justify-end w-full gap-5 items-center px-5 py-4">
-        <span className="font-medium opacity-70 text-sm flex-1 md:hidden">
+        <Link href="/" className="w-fit font-medium opacity-70 text-sm flex-1 md:hidden">
           Olamide Famojuro
-        </span>
+        </Link>
         <div className="flex  opacity-70 items-center flex-1 md:hidden">
           <Link href="/" className="flex items-center">
             <Image
