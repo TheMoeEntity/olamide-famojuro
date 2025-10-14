@@ -12,7 +12,7 @@ const geistSans = Geist({
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
-  subsets: ["latin"], 
+  subsets: ["latin"],
 });
 
 // const geistSans = localFont({
@@ -31,7 +31,7 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
-  title: "Henry Fame | Character Artist Portfolio",
+  title: "Olamide Famojuro | Character Artist Portfolio",
   description:
     "Explore the portfolio of Olamide Henry Famojuro — Henry Fame — a passionate character artist skilled in modeling, sculpting, and texturing for games, films, and 3D prints.",
   applicationName: "Henry Fame Portfolio",
@@ -43,6 +43,10 @@ export const metadata: Metadata = {
       name: "Olamide Henry Famojuro",
       url: Links.BASEURL,
     },
+    {
+      name: "Moses Chukwudi Nwigberi",
+      url: `https://mosesnwigberi.com`,
+    },
   ],
   icons: {
     icon: [
@@ -53,7 +57,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   openGraph: {
-    title: "Henry Fame | Character Artist Portfolio",
+    title: "Olamide Famojuro | Character Artist Portfolio",
     description:
       "Explore the portfolio of Olamide Henry Famojuro — Henry Fame — a passionate character artist skilled in modeling, sculpting, and texturing for games, films, and 3D prints.",
     url: Links.BASEURL,
