@@ -11,9 +11,7 @@ import { mapSanityBrands } from "@/lib/helpers";
 
 export default async function Home() {
   const homePageData = await getHomepage();
-  console.log("Home", homePageData);
   const youtubeUrl = homePageData.learningCenter.videoUrl;
-  console.log(youtubeUrl);
   const firstSectionVideoLink = homePageData.introVideo;
   const filmUrl = homePageData.films.media[0].asset.url;
   const mainImageUrl = homePageData.characters.media[0].asset.url;
