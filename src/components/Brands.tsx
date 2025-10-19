@@ -18,13 +18,13 @@ export const Brands: React.FC<{ allBrands: SiteBrand[] }> = ({ allBrands }) => {
       <h3 className="text-center px-3 md:text-2xl">
         Some of the companies I was fortunate to work with
       </h3>
-      <div className="grid max-w-7xl gap-x-4 mx-auto overflow-x-hidden gap-y-6 p-4 grid-cols-4 place-items-center justify-center items-center">
+      <div className="grid max-w-6xl gap-x-4 mx-auto overflow-x-hidden gap-y-6 p-4 grid-cols-4 place-items-center justify-center items-center">
         {brands.map((brand, index) => (
           <motion.div
             key={index}
             style={{
-              width: `${isMobile ? brand.dimensions.width * 0.3 : brand.dimensions.width * 0.8}px`,
-              height: `${isMobile ? brand.dimensions.height * 0.3 : brand.dimensions.height * 0.8}px`,
+              width: `${isMobile ? brand.dimensions.width * 0.3 : brand.dimensions.width * 0.7}px`,
+              height: `${isMobile ? brand.dimensions.height * 0.3 : brand.dimensions.height * 0.7}px`,
             }}
             className={`relative w-full flex items-center justify-center md:grayscale hover:grayscale-0 transition-all duration-300 ${
               index === brands.length - 1 && brands.length % 4 !== 0
