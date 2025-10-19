@@ -6,13 +6,18 @@ import mediaTwo from "../../public/traditional_art_2.png";
 import mediaThree from "../../public/traditional_art_3.png";
 import About from "@/components/About";
 import { Links } from "@/lib/constants";
+import { getHomepage } from "@/lib/queries";
+import { mapSanityBrands } from "@/lib/helpers";
 
-export default function Home() {
-  const youtubeUrl = `https://youtu.be/m2HrN-VhIHY`;
-  const firstSectionVideoLink = `https://youtu.be/pNLAADkyNvg?si=p5wUMvsF0zaLWwqE`;
-  const filmUrl =
-    "https://cdn.sanity.io/files/m0k79prg/production/2303d63c2e089d2ae33d050473b1d31acd3fd323.mp4";
-  const mainImageUrl = `https://cdn.sanity.io/images/m0k79prg/production/9074149689037e294d64038605f09b5397bc3e89-1920x1920.jpg`;
+export default async function Home() {
+  const homePageData = await getHomepage();
+  console.log("Home", homePageData);
+  const youtubeUrl = homePageData.learningCenter.videoUrl;
+  console.log(youtubeUrl);
+  const firstSectionVideoLink = homePageData.introVideo;
+  const filmUrl = homePageData.films.media[0].asset.url;
+  const mainImageUrl = homePageData.characters.media[0].asset.url;
+  const theBrands = mapSanityBrands(homePageData.brands);
   return (
     <div className="w-full mt-[70px] md:mt-0">
       <main className="min-h-screen">
@@ -46,39 +51,49 @@ export default function Home() {
           height="h-[300px] md:h-[600px]"
           overlayOpacity="bg-black/50"
         />
-        <TraditionalArt
-          media={{
-            mediaOne: mediaOne,
-            mediaTwo: mediaTwo,
-            mediaThree: mediaThree,
-          }}
-          caption={`Olamide is also known for blending traditional and digital mediums. His work explores modernism through bold forms and experimental techniques `}
-          link="https://www.instagram.com/olamide_famojuro"
-          ctaName="View Instagram"
-          title="Traditional Art"
+        {homePageData.traditionalArt.media && (
+          <TraditionalArt
+            media={{
+              mediaOne: homePageData.traditionalArt.media[0].asset.url,
+              mediaTwo: homePageData.traditionalArt.media[1].asset.url,
+              mediaThree: homePageData.traditionalArt.media[2].asset.url,
+            }}
+            caption={`Olamide is also known for blending traditional and digital mediums. His work explores modernism through bold forms and experimental techniques `}
+            link="https://www.instagram.com/olamide_famojuro"
+            ctaName="View Instagram"
+            title="Traditional Art"
+          />
+        )}
+        {youtubeUrl && (
+          <VideoSection
+            title="Learning Center"
+            description="Some animated films Olamide has worked on over the years"
+            videoUrl={youtubeUrl}
+            buttonText="YouTube Channel"
+            buttonHref="https://youtu.be/m2HrN-VhIHY"
+            height="h-[608px]"
+            showContent
+            showOverlay
+          />
+        )}
+        {homePageData.onlineStore.media && (
+          <TraditionalArt
+            media={{
+              mediaOne: homePageData.onlineStore.media[0].asset.url,
+              mediaTwo: homePageData.onlineStore.media[1].asset.url,
+              mediaThree: homePageData.onlineStore.media[2].asset.url,
+            }}
+            caption={`Check out Olamide's Store for limited edition items`}
+            link="https://olamidefamojuro.gumroad.com/"
+            ctaName="View Store"
+            title="Online Store"
+          />
+        )}
+        <About
+          bio={homePageData.about.bio}
+          allBrands={theBrands || []}
+          profilePicture={homePageData.about.profilePicture.asset.url}
         />
-        <VideoSection
-          title="Learning Center"
-          description="Some animated films Olamide has worked on over the years"
-          videoUrl={youtubeUrl}
-          buttonText="YouTube Channel"
-          buttonHref="https://youtu.be/m2HrN-VhIHY"
-          height="h-[608px]"
-          showContent
-          showOverlay
-        />
-        <TraditionalArt
-          media={{
-            mediaOne: mediaOne,
-            mediaTwo: mediaTwo,
-            mediaThree: mediaThree,
-          }}
-          caption={`Check out Olamide's Store for limited edition items`}
-          link="https://olamidefamojuro.gumroad.com/"
-          ctaName="View Store"
-          title="Online Store"
-        />
-        <About />
       </main>
     </div>
   );

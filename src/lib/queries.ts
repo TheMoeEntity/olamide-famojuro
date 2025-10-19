@@ -1,24 +1,20 @@
+import { HomePage } from "@/types/home.types";
 import { client } from "./sanity";
 
-export async function getHomepage() {
+export async function getHomepage(): Promise<HomePage> {
   return await client.fetch(`
     *[_type == "homepage"][0]{
-      title,
-      sections[]{
-        type,
-        title,
-        description,
-        mediaType,
-        media[]{
-          ...,
-          asset->{
-            url,
-            metadata { dimensions, lqip }
-          }
-        },
-        buttonText,
-        buttonHref
-      }
+      logo{asset->{url}},
+      resume{asset->{url}},
+      introVideo,
+      films{..., media[]{..., asset->{url}}},
+      characters{..., media[]{..., asset->{url}}},
+      traditionalArt{..., media[]{..., asset->{url}}},
+      learningCenter{..., media[]{..., asset->{url}}},
+      onlineStore{..., media[]{..., asset->{url}}},
+      about{bio, profilePicture{asset->{url}}},
+      brands[]{name, picture{asset->{url}}},
+      links
     }
   `);
 }

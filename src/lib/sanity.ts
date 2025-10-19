@@ -5,7 +5,7 @@ const projectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID;
 export const client = createClient({
   projectId,
   dataset: "production",
-  apiVersion: "2024-04-30",
+  apiVersion: "2025-10-19",
   useCdn: true,
 });
 // Helper function for generating image URLs with the Sanity Image Pipeline

@@ -1,3 +1,38 @@
+import { SiteBrand } from "@/types/home.types";
+import { SanityImageSource } from "@sanity/image-url/lib/types/types";
+import imageUrlBuilder from "@sanity/image-url";
+import { client } from "./sanity";
+
+const builder = imageUrlBuilder(client);
+export type Brand = {
+  name: string;
+  logo: string;
+  dimensions: {
+    width: number;
+    height: number;
+  };
+};
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export const mapSanityBrands = (brands: any[]): SiteBrand[] => {
+  if (!brands || !Array.isArray(brands)) return [];
+
+  return brands.map((brand) => {
+    const logoUrl: string = brand.picture?.asset?.url || "";
+
+    // extract dimensions from filename pattern e.g. "-269x269."
+    const match = logoUrl.match(/-(\d+)x(\d+)\./);
+    const width = match ? parseInt(match[1]) : 100;
+    const height = match ? parseInt(match[2]) : 100;
+
+    return {
+      name: brand.name || "Untitled Brand",
+      logo: logoUrl,
+      dimensions: { width, height },
+    };
+  });
+};
+
 export const sanitizeHtmlForMetaDescription = (
   html: string,
   maxLength: number = 160

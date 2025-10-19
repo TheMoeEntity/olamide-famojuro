@@ -2,17 +2,19 @@ import Image from "next/image";
 // import Link from "next/link";
 import React from "react";
 import { Brands } from "./Brands";
-import { bio } from "@/lib/constants";
+import { Brand, SiteBrand } from "@/types/home.types";
 
-const About = async () => {
-  const aboutUrl = `https://cdn.sanity.io/images/m0k79prg/production/d62af99be61ead800a3cc614aa513ba12371e966-1869x2792.jpg`;
-
+const About: React.FC<{
+  bio: string;
+  profilePicture: string;
+  allBrands: SiteBrand[];
+}> = async ({ bio, profilePicture, allBrands }) => {
   return (
     <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-16 pb-28">
-      {aboutUrl && (
+      {profilePicture && (
         <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-1">
           <Image
-            src={aboutUrl}
+            src={profilePicture}
             alt="Olamide Famojuro Profile Picture"
             width={125}
             height={125}
@@ -38,7 +40,7 @@ const About = async () => {
         Contact
       </Link> */}
       <div className="mt-10 w-full flex justify-center items-center">
-        <Brands />
+        <Brands allBrands={allBrands || []} />
       </div>
     </section>
   );
