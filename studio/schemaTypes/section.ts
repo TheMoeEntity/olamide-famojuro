@@ -39,6 +39,12 @@ export const section = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'sectionHeight',
+      title: 'Section Height',
+      description: 'e.g h-96 (multiply by 4 to get actual pixels), h-[500px], md:h-[600px]',
+      type: 'string',
+    }),
+    defineField({
       name: 'description',
       title: 'Description',
       type: 'text',

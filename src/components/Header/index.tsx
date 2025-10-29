@@ -102,17 +102,17 @@ const Header: React.FC<{
   const dimensions = (index: number) => {
     switch (index) {
       case 0:
-        return "w-[34px] h-[34px] block";
+        return "w-[36px] h-[36px] block";
       case 2:
-        return "w-[14px] h-[14px] block ml-[10px]";
+        return "w-[17px] h-[17px] block ml-[10px]";
       case 3:
-        return "w-[18px] h-[18px] block ml-[7px]";
+        return "w-[22px] h-[22px] block ml-[7px]";
       case 4:
-        return "w-[20px] h-[20px] block ml-[7px]";
+        return "w-[23px] h-[23px] block ml-[8px]";
       case 6:
-        return "w-[18px] h-[18px] block ml-[7px] -mt-1";
+        return "w-[23px] h-[23px] block ml-[5px] -mt-1";
       default:
-        return "w-[18px] h-[18px] block ml-2";
+        return "w-[22px] h-[22px] block ml-2";
     }
   };
 

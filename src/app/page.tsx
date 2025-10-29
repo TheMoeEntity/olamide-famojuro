@@ -30,7 +30,7 @@ export default async function Home() {
             description={""}
             buttonText=""
             buttonHref=""
-            height="h-[480px]"
+            height={`${firstSectionVideoLink?.videoHeight || "h-[480px]"}`}
             showContent={false}
             showOverlay={false}
             videoUrl={firstSectionVideoLinkHasUrl}
@@ -49,7 +49,7 @@ export default async function Home() {
           buttonHref={
             homePageData?.films.button?.href || Links.ARTSTATION_FILMS
           }
-          height="h-[650px]"
+          height={`${homePageData?.films.sectionHeight || "h-[650px]"}`}
           showContent
           showOverlay
         />
@@ -62,22 +62,23 @@ export default async function Home() {
             homePageData?.characters.button?.caption || "View Characters"
           }
           buttonHref={homePageData.characters.button?.href || "#"}
-          height="h-[300px] md:h-[600px]"
+          height={`${homePageData?.characters.sectionHeight || "h-[450px] md:h-[600px]"} `}
           overlayOpacity="bg-black/50"
         />
         {homePageData.traditionalArt.media && (
-          <TraditionalArt
-            media={{
-              mediaOne: homePageData.traditionalArt.media[0].asset.url,
-              mediaTwo: homePageData.traditionalArt.media[1].asset.url,
-              mediaThree: homePageData.traditionalArt.media[2].asset.url,
-            }}
-            caption={homePageData.traditionalArt.description}
-            link={homePageData.traditionalArt.button?.href || "#"}
-            ctaName={
-              homePageData.traditionalArt.button?.caption || "View Instagram"
+          <ImageSection
+            title={homePageData?.traditionalArt.title || "Traditional Art"}
+            description={homePageData?.traditionalArt.description}
+            images={homePageData.traditionalArt.media.map((item) => ({
+              imageUrl: item.asset.url,
+              imageAlt: homePageData.traditionalArt.title,
+            }))}
+            buttonText={
+              homePageData?.traditionalArt.button?.caption || "View Instagram"
             }
-            title={homePageData.traditionalArt.title || "Traditional Art"}
+            buttonHref={homePageData.traditionalArt.button?.href || "#"}
+            height={`${homePageData?.traditionalArt.sectionHeight || "h-[300px] md:h-[600px]"} `}
+            overlayOpacity="bg-black/50"
           />
         )}
         {homePageData.learningCenter.mediaType === "picture" &&
@@ -93,7 +94,7 @@ export default async function Home() {
                 homePageData?.learningCenter.button?.caption || "View Gallery"
               }
               buttonHref={homePageData.learningCenter.button?.href || "#"}
-              height="h-[300px] md:h-[600px]"
+              height={`${homePageData?.learningCenter.sectionHeight || "h-[300px] md:h-[600px]"} `}
               overlayOpacity="bg-black/50"
             />
           )}
@@ -112,28 +113,28 @@ export default async function Home() {
               homePageData?.learningCenter.button?.href ||
               "https://youtu.be/m2HrN-VhIHY"
             }
-            height="h-[608px]"
+            height={`${homePageData?.learningCenter.sectionHeight || "h-[608px]"} `}
             showContent
             showOverlay
           />
         )}
         {homePageData.onlineStore.media && (
-          <TraditionalArt
-            media={{
-              mediaOne: homePageData.onlineStore.media[0].asset.url,
-              mediaTwo: homePageData.onlineStore.media[1].asset.url,
-              mediaThree: homePageData.onlineStore.media[2].asset.url,
-            }}
-            caption={
-              homePageData.onlineStore.description ||
-              "Check out Olamide's Store for limited edition items"
+          <ImageSection
+            title={homePageData?.onlineStore.title || "Online Store"}
+            description={homePageData?.onlineStore.description}
+            images={homePageData.onlineStore.media.map((item) => ({
+              imageUrl: item.asset.url,
+              imageAlt: homePageData.onlineStore.title,
+            }))}
+            buttonText={
+              homePageData?.onlineStore.button?.caption || "View Store"
             }
-            link={
+            buttonHref={
               homePageData.onlineStore.button?.href ||
               "https://olamidefamojuro.gumroad.com/"
             }
-            ctaName={homePageData.onlineStore.button?.caption || "View Store"}
-            title={homePageData.onlineStore.title || "Online Store"}
+            height={`${homePageData?.onlineStore.sectionHeight || "h-[300px] md:h-[600px]"} `}
+            overlayOpacity="bg-black/50"
           />
         )}
         <About

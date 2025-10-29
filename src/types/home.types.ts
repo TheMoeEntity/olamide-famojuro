@@ -19,6 +19,7 @@ export interface Section {
   media: MediaAsset[];
   title: string;
   videoUrl?: string;
+  sectionHeight?: string;
   description: string;
   button?: Button;
 }
@@ -60,6 +61,7 @@ export interface HomePage {
   introVideo: {
     videoUrl: string;
     uploadedVideo?: MediaAsset;
+    videoHeight?: string;
   };
   films: Section;
   characters: Section;

@@ -40,6 +40,12 @@ export const homepage = defineType({
             accept: 'video/*',
           },
         },
+        {
+          name: 'videoHeight',
+          title: 'Video Height',
+          type: 'string',
+          description: 'Height of the video player (e.g. "360px", "100%")',
+        },
       ],
     }),
     defineField({

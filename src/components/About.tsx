@@ -23,15 +23,15 @@ const About: React.FC<{
         </div>
       )}
 
-      <h2 className="md:text-2xl text-center text-lg mt-0 mb-0">
+      <h2 className="md:text-2xl text-center text-lg mt-0 md:mt-7 mb-0">
         Olamide Famojuro
       </h2>
-      <h2 className="md:text-xl -mt-1 mb-0 text-xs font-light">
+      <h2 className="md:text-xl -mt-1 md:mt-0 mb-0 text-xs font-light">
         3D Character Artist/Tutor
       </h2>
       <p
         dangerouslySetInnerHTML={{ __html: bio }}
-        className="max-w-4xl text-xs md:text-base  mx-auto mt-2 px-6 text-center leading-4 opacity-90 md:leading-[23px]"
+        className="max-w-4xl text-xs md:text-base  mx-auto mt-2 md:mt-7 px-6 text-center leading-4 opacity-90 md:leading-[23px]"
       />
       {/* <Link
         href={"/contact"}
