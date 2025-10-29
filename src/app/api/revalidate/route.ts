@@ -21,7 +21,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
 
     console.log("Revalidation request body:", body);
-    if (body._type === "home") {
+    if (body._type === "homepage") {
       revalidatePath("/");
     }
 
