@@ -1,14 +1,11 @@
 import { ImageSection } from "@/components/ImageSection";
 import TraditionalArt from "@/components/TraditionalArt";
 import { VideoSection } from "@/components/VideoSection";
-import mediaOne from "../../public/traditional_art.png";
-import mediaTwo from "../../public/traditional_art_2.png";
-import mediaThree from "../../public/traditional_art_3.png";
 import About from "@/components/About";
 import { Links } from "@/lib/constants";
 import { getHomepage } from "@/lib/queries";
 import { mapSanityBrands } from "@/lib/helpers";
-
+export const revalidate = 3600;
 export default async function Home() {
   const homePageData = await getHomepage();
   const youtubeUrl = homePageData.learningCenter.videoUrl;

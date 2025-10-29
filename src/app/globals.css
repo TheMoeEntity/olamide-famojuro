@@ -18,8 +18,10 @@
     --foreground: #ededed;
   }
 } */
-html, * {
-    scroll-behavior:smooth;
+html,
+* {
+  scroll-behavior: smooth;
+  font-display: swap;
 }
 
 body {
