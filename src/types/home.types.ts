@@ -57,7 +57,10 @@ export interface SocialLinks {
 export interface HomePage {
   logo: MediaAsset;
   resume: MediaAsset;
-  introVideo: string;
+  introVideo: {
+    videoUrl: string;
+    uploadedVideo?: MediaAsset;
+  };
   films: Section;
   characters: Section;
   traditionalArt: TradArt;

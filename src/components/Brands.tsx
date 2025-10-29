@@ -14,11 +14,11 @@ export const Brands: React.FC<{ allBrands: SiteBrand[] }> = ({ allBrands }) => {
   const isMobile = useClientMediaQuery("(max-width: 768px)");
   const brands = allBrands;
   return (
-    <div className="w-full mt-10 flex flex-col justify-center">
+    <div className="w-full mt-10 flex no-scrollbar flex-col justify-center">
       <h3 className="text-center px-3 md:text-2xl">
         Some of the companies I was fortunate to work with
       </h3>
-      <div className="grid max-w-6xl gap-x-4 mx-auto overflow-x-hidden gap-y-6 p-4 grid-cols-4 place-items-center justify-center items-center">
+      <div className="grid no-scrollbar max-w-6xl gap-x-4 mx-auto overflow-x-hidden gap-y-6 p-4 grid-cols-4 place-items-center justify-center items-center">
         {brands.map((brand, index) => (
           <motion.div
             key={index}

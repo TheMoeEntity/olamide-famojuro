@@ -15,7 +15,7 @@ const TraditionalArt: React.FC<{
 }> = ({ caption, title, link, ctaName, media }) => {
   return (
     <section className="relative w-full overflow-hidden md:h-[608px] group">
-      <div className="absolute w-full z-10 flex items-end md:items-center pb-8 justify-center h-full">
+      <div className="absolute w-full z-10 flex items-end pb-8 md:pb-16 justify-center h-full">
         <div className="text-center text-white px-6 max-w-2xl">
           <h2 className="text-4xl opacity-60 md:text-5xl font-semibold mb-2 text-balance">
             {title}

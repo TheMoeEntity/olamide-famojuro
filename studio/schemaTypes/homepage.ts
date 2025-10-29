@@ -23,9 +23,24 @@ export const homepage = defineType({
     }),
     defineField({
       name: 'introVideo',
-      title: 'Intro Video URL',
-      type: 'url',
-      description: 'YouTube or direct video URL',
+      title: 'Intro Video',
+      type: 'object',
+      fields: [
+        {
+          name: 'videoUrl',
+          title: 'Video URL',
+          type: 'url',
+          description: 'YouTube or direct video URL',
+        },
+        {
+          name: 'uploadedVideo',
+          title: 'Upload Video',
+          type: 'file',
+          options: {
+            accept: 'video/*',
+          },
+        },
+      ],
     }),
     defineField({
       name: 'films',

@@ -80,7 +80,7 @@ export function VideoSection({
 
       {/* Content */}
       {showContent && (
-        <div className="relative z-10 flex items-end md:items-center pb-8 justify-center h-full">
+        <div className="relative z-10 flex items-end pb-8 md:pb-16 justify-center h-full">
           <div className="text-center text-white px-6 max-w-2xl">
             <h2 className="text-4xl opacity-60 md:text-5xl font-semibold mb-1 text-balance">
               {title}

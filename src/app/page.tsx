@@ -11,38 +11,57 @@ export default async function Home() {
   const youtubeUrl = homePageData.learningCenter.videoUrl;
   const firstSectionVideoLink = homePageData.introVideo;
   const filmUrl = homePageData.films.media[0].asset.url;
-  const mainImageUrl = homePageData.characters.media[0].asset.url;
+  const images = homePageData.characters.media.map((item) => ({
+    imageUrl: item.asset.url,
+    imageAlt: homePageData.characters.title,
+  }));
+  // const mainImageUrl = homePageData.characters.media;
   const theBrands = mapSanityBrands(homePageData.brands);
+  console.log(homePageData);
+  const firstSectionVideoLinkHasUrl =
+    firstSectionVideoLink.videoUrl ||
+    firstSectionVideoLink.uploadedVideo?.asset.url;
   return (
     <div className="w-full mt-[70px] md:mt-0">
       <main className="min-h-screen">
+        {firstSectionVideoLinkHasUrl && (
+          <VideoSection
+            title={""}
+            description={""}
+            buttonText=""
+            buttonHref=""
+            height="h-[480px]"
+            showContent={false}
+            showOverlay={false}
+            videoUrl={firstSectionVideoLinkHasUrl}
+          />
+        )}
         <VideoSection
-          title="Films"
-          description="Cinematic storytelling through 3D character animation and visual effects"
-          videoUrl={firstSectionVideoLink} // Replace with your actual video URL
-          buttonText="View Portfolio"
-          buttonHref="/films"
-          height="h-[650px]"
-          showContent={false}
-          showOverlay={false}
-        />
-        <VideoSection
-          title="Films"
-          description="Some animated films Olamide has worked on over the years"
+          title={homePageData?.films.title || "Films"}
+          description={
+            homePageData?.films.description ||
+            "Some animated films Olamide has worked on over the years"
+          }
           videoUrl={filmUrl}
-          buttonText="View Full Gallery"
-          buttonHref={Links.ARTSTATION_FILMS}
+          buttonText={
+            homePageData?.films.button?.caption || "View Full Gallery"
+          }
+          buttonHref={
+            homePageData?.films.button?.href || Links.ARTSTATION_FILMS
+          }
           height="h-[650px]"
           showContent
           showOverlay
         />
         <ImageSection
-          title="Characters"
-          description="Olamide Famojuro's immense contributions to Nigeria's animation and game industry are exemplified by his creation of excellent, visually appealing characters for several projects."
-          imageUrl={mainImageUrl}
-          imageAlt="3D Character Models"
-          buttonText="View Portfolio"
-          buttonHref={Links.ARTSTATION}
+          title={homePageData?.characters.title || "Characters"}
+          description={homePageData?.characters.description}
+          images={images}
+          // imageAlt="3D Character Models"
+          buttonText={
+            homePageData?.characters.button?.caption || "View Characters"
+          }
+          buttonHref={homePageData.characters.button?.href || "#"}
           height="h-[300px] md:h-[600px]"
           overlayOpacity="bg-black/50"
         />
@@ -53,19 +72,46 @@ export default async function Home() {
               mediaTwo: homePageData.traditionalArt.media[1].asset.url,
               mediaThree: homePageData.traditionalArt.media[2].asset.url,
             }}
-            caption={`Olamide is also known for blending traditional and digital mediums. His work explores modernism through bold forms and experimental techniques `}
-            link="https://www.instagram.com/olamide_famojuro"
-            ctaName="View Instagram"
-            title="Traditional Art"
+            caption={homePageData.traditionalArt.description}
+            link={homePageData.traditionalArt.button?.href || "#"}
+            ctaName={
+              homePageData.traditionalArt.button?.caption || "View Instagram"
+            }
+            title={homePageData.traditionalArt.title || "Traditional Art"}
           />
         )}
+        {homePageData.learningCenter.mediaType === "picture" &&
+          homePageData.learningCenter.media && (
+            <ImageSection
+              title={homePageData?.learningCenter.title || "Learning Center"}
+              description={homePageData?.learningCenter.description}
+              images={homePageData.learningCenter.media.map((item) => ({
+                imageUrl: item.asset.url,
+                imageAlt: homePageData.learningCenter.title,
+              }))}
+              buttonText={
+                homePageData?.learningCenter.button?.caption || "View Gallery"
+              }
+              buttonHref={homePageData.learningCenter.button?.href || "#"}
+              height="h-[300px] md:h-[600px]"
+              overlayOpacity="bg-black/50"
+            />
+          )}
         {youtubeUrl && (
           <VideoSection
-            title="Learning Center"
-            description="Some animated films Olamide has worked on over the years"
+            title={homePageData?.learningCenter.title || "Learning Center"}
+            description={
+              homePageData?.learningCenter.description ||
+              "Some animated films Olamide has worked on over the years"
+            }
             videoUrl={youtubeUrl}
-            buttonText="YouTube Channel"
-            buttonHref="https://youtu.be/m2HrN-VhIHY"
+            buttonText={
+              homePageData?.learningCenter.button?.caption || "YouTube Channel"
+            }
+            buttonHref={
+              homePageData?.learningCenter.button?.href ||
+              "https://youtu.be/m2HrN-VhIHY"
+            }
             height="h-[608px]"
             showContent
             showOverlay
@@ -78,10 +124,16 @@ export default async function Home() {
               mediaTwo: homePageData.onlineStore.media[1].asset.url,
               mediaThree: homePageData.onlineStore.media[2].asset.url,
             }}
-            caption={`Check out Olamide's Store for limited edition items`}
-            link="https://olamidefamojuro.gumroad.com/"
-            ctaName="View Store"
-            title="Online Store"
+            caption={
+              homePageData.onlineStore.description ||
+              "Check out Olamide's Store for limited edition items"
+            }
+            link={
+              homePageData.onlineStore.button?.href ||
+              "https://olamidefamojuro.gumroad.com/"
+            }
+            ctaName={homePageData.onlineStore.button?.caption || "View Store"}
+            title={homePageData.onlineStore.title || "Online Store"}
           />
         )}
         <About

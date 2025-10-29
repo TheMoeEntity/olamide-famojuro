@@ -13,6 +13,7 @@ import linkedIn from "../../../public/logo_linkedin-line.png";
 import mail from "../../../public/mail_icon.png";
 import youTube from "../../../public/logo_youtube-line.png";
 import { Links } from "@/lib/constants";
+import { SocialLinks } from "@/types/home.types";
 
 type MenuItem = {
   title: string;
@@ -26,7 +27,11 @@ type SideMenuItem = {
   icon: StaticImageData;
 };
 
-const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
+const Header: React.FC<{
+  resumeUrl: string | null;
+  links: SocialLinks;
+  logo: string | null;
+}> = ({ resumeUrl, links: SocialLinks, logo }) => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const pathname = usePathname();
@@ -34,9 +39,9 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
   // Centralized menu configuration
   const sidebarItems: MenuItem[] = [
     { title: "About", path: "#about" },
-    { title: "Profile", path: Links.LINKEDIN },
-    { title: "Shop", path: Links.GUMROAD },
-    { title: "Learning Center", path: Links.YOUTUBE },
+    { title: "Profile", path: SocialLinks.linkedin || Links.LINKEDIN },
+    { title: "Shop", path: SocialLinks.gumroad || Links.GUMROAD },
+    { title: "Learning Center", path: SocialLinks.youtube || Links.YOUTUBE },
     { title: "Contact Me", path: "mailto:olamidefamojuro@gmail.com" },
   ];
 
@@ -44,37 +49,37 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
     { title: "Home", path: "/", external: false, icon: fameLogo },
     {
       title: "Store",
-      path: Links.GUMROAD,
+      path: SocialLinks.gumroad || Links.GUMROAD,
       external: true,
       icon: store,
     },
     {
       title: "Instagram",
-      path: Links.INSTAGRAM,
+      path: SocialLinks.instagram || Links.INSTAGRAM,
       external: true,
       icon: insta,
     },
     {
       title: "Art Station",
-      path: Links.ARTSTATION,
+      path: SocialLinks.artstation || Links.ARTSTATION,
       external: true,
       icon: artstation,
     },
     {
       title: "LinkedIn",
-      path: Links.LINKEDIN,
+      path: SocialLinks.linkedin || Links.LINKEDIN,
       external: true,
       icon: linkedIn,
     },
     {
       title: "Contact",
-      path: "/contact",
+      path: "mailto:olamidefamojuro@gmail.com",
       external: false,
       icon: mail,
     },
     {
       title: "YouTube Channel",
-      path: Links.YOUTUBE,
+      path: SocialLinks.youtube || Links.YOUTUBE,
       external: true,
       icon: youTube,
     },
@@ -124,9 +129,11 @@ const Header: React.FC<{ resumeUrl: string | null }> = ({ resumeUrl }) => {
         <div className="flex  opacity-70 items-center flex-1 md:hidden">
           <Link href="/" className="flex items-center">
             <Image
-              src={fameLogo}
-              alt="Olamide Famojuro Logo"
+              src={logo || fameLogo}
+              alt="Olamide Henry Famojuro Logo"
               className="w-8 h-8"
+              width={32}
+              height={32}
             />
           </Link>
         </div>
