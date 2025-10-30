@@ -68,7 +68,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Henry Fame | Character Artist",
     description:
-      "Explore captivating 3D characters crafted by Henry Fame, blending realism and creativity for games and film.",
+      "Explore captivating 3D characters crafted by Olamide Famojuro (Henry Fame), blending realism and creativity for games and film.",
     images: [og_image],
   },
   metadataBase: new URL(Links.BASEURL),
