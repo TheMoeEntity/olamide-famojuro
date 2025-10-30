@@ -66,9 +66,9 @@ export function ImageSection({
   ];
 
   return (
-    <section className={`relative ${height} overflow-hidden`}>
+    <section className={`relative w-full ${height} overflow-hidden`}>
       {/* Background image grid */}
-      <div className="absolute inset-0">
+      <div className="absolute w-full h-full inset-0">
         <div
           className="w-full h-full grid"
           // dynamic columns via inline style to avoid Tailwind class generation issues
@@ -80,6 +80,7 @@ export function ImageSection({
                 src={img.imageUrl || "/placeholder.svg"}
                 alt={img.imageAlt || "image"}
                 fill
+                quality={100}
                 className="object-cover"
                 priority={idx === 0}
               />
