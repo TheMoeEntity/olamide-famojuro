@@ -1,4 +1,5 @@
 export const baseUrl = `https://olamidefamojuro.com`;
+export const og_image = `${baseUrl}/fame_OG.png`;
 export enum Links {
   BASEURL = baseUrl,
   GUMROAD = "https://olamidefamojuro.gumroad.com/",

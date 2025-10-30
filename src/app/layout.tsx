@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { League_Spartan } from "next/font/google";
 import AppLayout from "@/components/AppLayout";
-import { baseUrl, bio, Links } from "@/lib/constants";
+import { baseUrl, bio, Links, og_image } from "@/lib/constants";
 import { sanitizeHtmlForMetaDescription } from "@/lib/helpers";
 
 // const geistSans = localFont({
@@ -22,7 +22,7 @@ const leagueSpartan = League_Spartan({
 });
 
 export const metadata: Metadata = {
-  title: "Olamide Famojuro | Character Artist Portfolio",
+  title: "Olamide Famojuro | Character Artist",
   description:
     "Explore the portfolio of Olamide Henry Famojuro — Henry Fame — a passionate character artist skilled in modeling, sculpting, and texturing for games, films, and 3D prints.",
   applicationName: "Henry Fame Portfolio",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon.png" }],
   },
   openGraph: {
-    title: "Olamide Famojuro | Character Artist Portfolio",
+    title: "Olamide Famojuro | Character Artist",
     description:
       "Explore the portfolio of Olamide Henry Famojuro — Henry Fame — a passionate character artist skilled in modeling, sculpting, and texturing for games, films, and 3D prints.",
     url: Links.BASEURL,
@@ -57,7 +57,7 @@ export const metadata: Metadata = {
     locale: "en_US",
     images: [
       {
-        url: "https://olamidefamojuro.com/images/olamide-famojuro-hen.jpg",
+        url: og_image,
         width: 1200,
         height: 630,
         alt: "Henry Fame Character Artist Portfolio",
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: "Henry Fame | Character Artist",
     description:
       "Explore captivating 3D characters crafted by Henry Fame, blending realism and creativity for games and film.",
-    images: ["https://olamidefamojuro.com/images/olamide-famojuro-hen.jpg"],
+    images: [og_image],
   },
   metadataBase: new URL(Links.BASEURL),
 };
