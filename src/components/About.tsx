@@ -10,7 +10,7 @@ const About: React.FC<{
   allBrands: SiteBrand[];
 }> = async ({ bio, profilePicture, allBrands }) => {
   return (
-    <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-24 md:pt-32 pb-28">
+    <section className="bg-black w-full flex flex-col items-center justify-center text-white pt-24 md:pt-44 pb-28">
       {profilePicture && (
         <div className="w-[124px] md:w-[125px] flex justify-center items-center h-[124px] md:h-[125px] rounded-full overflow-hidden mb-1">
           <Image
