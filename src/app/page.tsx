@@ -62,8 +62,9 @@ export default async function Home() {
             homePageData?.characters.button?.caption || "View Characters"
           }
           buttonHref={homePageData.characters.button?.href || "#"}
-          height={`${homePageData?.characters.sectionHeight || "h-[450px] md:h-[600px]"} `}
-          overlayOpacity="bg-black/50"
+          height={`${
+            homePageData?.characters.sectionHeight || "h-[450px] md:h-[600px]"
+          } `}
         />
         {homePageData.traditionalArt.media && (
           <ImageSection
@@ -77,8 +78,10 @@ export default async function Home() {
               homePageData?.traditionalArt.button?.caption || "View Instagram"
             }
             buttonHref={homePageData.traditionalArt.button?.href || "#"}
-            height={`${homePageData?.traditionalArt.sectionHeight || "h-[300px] md:h-[600px]"} `}
-            overlayOpacity="bg-black/50"
+            height={`${
+              homePageData?.traditionalArt.sectionHeight ||
+              "h-[300px] md:h-[600px]"
+            } `}
           />
         )}
         {homePageData.learningCenter.mediaType === "picture" &&
@@ -94,8 +97,10 @@ export default async function Home() {
                 homePageData?.learningCenter.button?.caption || "View Gallery"
               }
               buttonHref={homePageData.learningCenter.button?.href || "#"}
-              height={`${homePageData?.learningCenter.sectionHeight || "h-[300px] md:h-[600px]"} `}
-              overlayOpacity="bg-black/50"
+              height={`${
+                homePageData?.learningCenter.sectionHeight ||
+                "h-[300px] md:h-[600px]"
+              } `}
             />
           )}
         {youtubeUrl && (
@@ -113,7 +118,9 @@ export default async function Home() {
               homePageData?.learningCenter.button?.href ||
               "https://youtu.be/m2HrN-VhIHY"
             }
-            height={`${homePageData?.learningCenter.sectionHeight || "h-[608px]"} `}
+            height={`${
+              homePageData?.learningCenter.sectionHeight || "h-[608px]"
+            } `}
             showContent
             showOverlay
           />
@@ -133,8 +140,10 @@ export default async function Home() {
               homePageData.onlineStore.button?.href ||
               "https://olamidefamojuro.gumroad.com/"
             }
-            height={`${homePageData?.onlineStore.sectionHeight || "h-[300px] md:h-[600px]"} `}
-            overlayOpacity="bg-black/50"
+            height={`${
+              homePageData?.onlineStore.sectionHeight ||
+              "h-[300px] md:h-[600px]"
+            } `}
           />
         )}
         <About
