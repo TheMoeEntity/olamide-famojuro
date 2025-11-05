@@ -24,7 +24,7 @@ export function ImageSection({
   buttonText = "View Portfolio",
   buttonHref = "#",
   height = "h-96",
-  overlayOpacity = "bg-black/60",
+  overlayOpacity = "bg-black/10",
 }: ImageSectionProps) {
   const [width, setWidth] = useState<number>(0);
 
