@@ -1,5 +1,4 @@
 import { ImageSection } from "@/components/ImageSection";
-import TraditionalArt from "@/components/TraditionalArt";
 import { VideoSection } from "@/components/VideoSection";
 import About from "@/components/About";
 import { Links } from "@/lib/constants";
@@ -15,12 +14,10 @@ export default async function Home() {
     imageUrl: item.asset.url,
     imageAlt: homePageData.characters.title,
   }));
-  // const mainImageUrl = homePageData.characters.media;
   const theBrands = mapSanityBrands(homePageData.brands);
-  console.log(homePageData);
   const firstSectionVideoLinkHasUrl =
-    firstSectionVideoLink.videoUrl ||
-    firstSectionVideoLink.uploadedVideo?.asset.url;
+    firstSectionVideoLink.uploadedVideo?.asset.url ||
+    firstSectionVideoLink.videoUrl;
   return (
     <div className="w-full mt-[70px] md:mt-0">
       <main className="min-h-screen">
@@ -30,7 +27,7 @@ export default async function Home() {
             description={""}
             buttonText=""
             buttonHref=""
-            height={`${firstSectionVideoLink?.videoHeight || "h-[480px]"}`}
+            height={`${firstSectionVideoLink?.videoHeight || "h-[540px]"}`}
             showContent={false}
             showOverlay={false}
             videoUrl={firstSectionVideoLinkHasUrl}

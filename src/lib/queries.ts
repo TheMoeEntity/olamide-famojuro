@@ -6,7 +6,13 @@ export async function getHomepage(): Promise<HomePage> {
     *[_type == "homepage"][0]{
       logo{asset->{url}},
       resume{asset->{url}},
-      introVideo,
+      introVideo{
+        videoUrl,
+        uploadedVideo{
+          asset->{url}
+        },
+        videoHeight
+      },
       films{..., media[]{..., asset->{url}}},
       characters{..., media[]{..., asset->{url}}},
       traditionalArt{..., media[]{..., asset->{url}}},
