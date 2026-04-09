@@ -15,7 +15,7 @@ export async function getHomepage(): Promise<HomePage> {
       },
       films{..., media[]{..., asset->{url}}},
       characters{..., media[]{..., asset->{url}}},
-      traditionalArt{..., media[]{..., asset->{url}}},
+      traditionalArt{..., media[]{..., asset->{url}}, uploadedVideo{asset->{url}}},
       learningCenter{..., media[]{..., asset->{url}}},
       onlineStore{..., media[]{..., asset->{url}}},
       about{bio, profilePicture{asset->{url}}},

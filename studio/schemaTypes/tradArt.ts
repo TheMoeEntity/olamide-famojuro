@@ -15,6 +15,7 @@ export const tradArt = defineType({
           {title: 'Picture', value: 'picture'},
           {title: 'Video', value: 'video'},
         ],
+        layout: 'radio',
       },
     }),
     defineField({
@@ -23,10 +24,34 @@ export const tradArt = defineType({
       type: 'array',
       of: [{type: 'image'}],
       validation: (Rule) => Rule.max(3),
+      hidden: ({parent}) => parent?.mediaType === 'video',
+    }),
+    defineField({
+      name: 'videoUrl',
+      title: 'Video URL Link',
+      description: 'Paste a video link (e.g YouTube, Vimeo)',
+      type: 'string',
+      hidden: ({parent}) => parent?.mediaType !== 'video',
+    }),
+    defineField({
+      name: 'uploadedVideo',
+      title: 'Upload Video',
+      description: 'Or upload a video file directly',
+      type: 'file',
+      options: {
+        accept: 'video/*',
+      },
+      hidden: ({parent}) => parent?.mediaType !== 'video',
     }),
     defineField({
       name: 'title',
       title: 'Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'sectionHeight',
+      title: 'Section Height',
+      description: 'e.g h-96 (multiply by 4 to get actual pixels), h-[500px], md:h-[600px]',
       type: 'string',
     }),
     defineField({

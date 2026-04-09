@@ -26,6 +26,7 @@ export interface Section {
 
 export interface TradArt extends Omit<Section, "media"> {
   media: MediaAsset[]; // max 3 enforced in schema, not here
+  uploadedVideo?: MediaAsset;
 }
 
 export interface About {

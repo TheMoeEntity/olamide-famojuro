@@ -18,6 +18,7 @@ export default async function Home() {
   const firstSectionVideoLinkHasUrl =
     firstSectionVideoLink.uploadedVideo?.asset.url ||
     firstSectionVideoLink.videoUrl;
+  console.log(homePageData.traditionalArt);
   return (
     <div className="w-full mt-[70px] md:mt-0">
       <main className="min-h-screen">
@@ -63,24 +64,47 @@ export default async function Home() {
             homePageData?.characters.sectionHeight || "h-[450px] md:h-[600px]"
           } `}
         />
-        {homePageData.traditionalArt.media && (
-          <ImageSection
-            title={homePageData?.traditionalArt.title || "Traditional Art"}
-            description={homePageData?.traditionalArt.description}
-            images={homePageData.traditionalArt.media.map((item) => ({
-              imageUrl: item.asset.url,
-              imageAlt: homePageData.traditionalArt.title,
-            }))}
-            buttonText={
-              homePageData?.traditionalArt.button?.caption || "View Instagram"
-            }
-            buttonHref={homePageData.traditionalArt.button?.href || "#"}
-            height={`${
-              homePageData?.traditionalArt.sectionHeight ||
-              "h-[300px] md:h-[600px]"
-            } `}
-          />
-        )}
+        {homePageData.traditionalArt.mediaType === "video" &&
+          (homePageData.traditionalArt.uploadedVideo?.asset?.url ||
+            homePageData.traditionalArt.videoUrl) && (
+            <VideoSection
+              title={homePageData?.traditionalArt.title || "Traditional Art"}
+              description={homePageData?.traditionalArt.description}
+              videoUrl={
+                homePageData.traditionalArt.uploadedVideo?.asset?.url ||
+                homePageData.traditionalArt.videoUrl ||
+                ""
+              }
+              buttonText={
+                homePageData?.traditionalArt.button?.caption || "View Instagram"
+              }
+              buttonHref={homePageData.traditionalArt.button?.href || "#"}
+              height={`${
+                homePageData?.traditionalArt.sectionHeight || "h-[608px]"
+              }`}
+              showContent
+              showOverlay
+            />
+          )}
+        {homePageData.traditionalArt.mediaType !== "video" &&
+          homePageData.traditionalArt.media && (
+            <ImageSection
+              title={homePageData?.traditionalArt.title || "Traditional Art"}
+              description={homePageData?.traditionalArt.description}
+              images={homePageData.traditionalArt.media.map((item) => ({
+                imageUrl: item.asset.url,
+                imageAlt: homePageData.traditionalArt.title,
+              }))}
+              buttonText={
+                homePageData?.traditionalArt.button?.caption || "View Instagram"
+              }
+              buttonHref={homePageData.traditionalArt.button?.href || "#"}
+              height={`${
+                homePageData?.traditionalArt.sectionHeight ||
+                "h-[300px] md:h-[600px]"
+              } `}
+            />
+          )}
         {homePageData.learningCenter.mediaType === "picture" &&
           homePageData.learningCenter.media && (
             <ImageSection
