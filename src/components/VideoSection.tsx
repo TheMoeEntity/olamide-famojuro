@@ -86,7 +86,7 @@ export function VideoSection({
               {title}
             </h2>
             {description && (
-              <p className="text-sm leading-4 md:leading-normal max-w-xs opacity-60 mx-auto md:text-xl mb-2 text-pretty">
+              <p className="text-sm leading-4 md:leading-normal max-w-xs md:max-w-3xl opacity-60 mx-auto md:text-xl mb-2 text-pretty">
                 {description}
               </p>
             )}
